@@ -1,17 +1,35 @@
 # Workflow
 
-1. Look at `libDeps.txt` to see what to work on next
+1. Look at [`libDeps.txt`](./libDeps.txt) to see what to work on next
 
 2. Install the package and its dependencies and set up its git remotes
-```bash
-# Install a package and its dependencies
-./genSpagoFile.sh packageName
-./compile.sh packageName
 
-# Setup a remote to your fork of the repo
-# if package is stored at ``.spago/packageName/version`
-# run `ls .spago/packageName` to see what the version is
-./setupRemote.sh packageName versionName
+```bash
+# Generate the corresponding `<packageName>.dhall` file
+./genSpagoFile.sh <packageName>
+
+# Install and compile just that package and its dependencies
+./compile.sh <packageName>
+
+# Setup a remote to your fork of the repo.
+#   If package is stored at `.spago/packageName/version`
+#   run `ls .spago/packageName` to see what the version is
+./setupRemote.sh <packageName> <versionName>
+```
+
+Using `prelude` as an example, we would run...
+```bash
+# Generate the corresponding `<packageName>.dhall` file
+./genSpagoFile.sh prelude
+
+# Install and compile just that package and its dependencies
+./compile.sh prelude
+
+# outputs master
+ls .spago/prelude
+
+# Setup a remote to your fork of the repo.
+./setupRemote.sh prelude master
 ```
 
 3. Do your updates locally
@@ -19,6 +37,25 @@
 ```bash
 cd .spago/packageName/versionName
 #   make changes via your editor
+
+# verify that the package still compiles
+./compile.sh <packageName>
+
+# if you need to reinstall / update a dependency
+./reinstall <dependencyName> <packageName>
+```
+
+For example
+```bash
+cd .spago/functions/v4.0.0
+#   make changes via your editor
+# verify that the package still compiles
+./compile.sh functions
+
+# if you need to reinstall / update a dependency
+# You can do this. Note: it will delete any prior work you had
+# done previously
+./reinstall prelude functions
 ```
 
 4. Create a PR
