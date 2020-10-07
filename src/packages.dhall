@@ -101,4 +101,4 @@ let packages =
       ⫽ ./groups/pelotom.dhall
       ⫽ ./groups/colinwahl.dhall
 
-in  packages
+in  packages with metadata.version = "v0.14.0-rc2"
