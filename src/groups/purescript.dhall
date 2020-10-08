@@ -315,7 +315,7 @@
   , version = "v2.0.0"
   }
 , newtype =
-  { dependencies = [ "prelude" ]
+  { dependencies = [ "prelude", "safe-coerce" ]
   , repo = "https://github.com/purescript/purescript-newtype.git"
   , version = "v3.0.0"
   }
