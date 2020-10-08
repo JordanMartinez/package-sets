@@ -455,6 +455,11 @@
   , repo = "https://github.com/purescript/purescript-refs.git"
   , version = "v4.1.0"
   }
+, safe-coerce =
+  { dependencies = ["unsafe-coerce"]
+  , repo = "https://github.com/purescript/purescript-safe-coerce.git"
+  , version = "master"
+  }
 , semirings =
   { dependencies = [ "foldable-traversable", "lists", "newtype", "prelude" ]
   , repo = "https://github.com/purescript/purescript-semirings.git"
