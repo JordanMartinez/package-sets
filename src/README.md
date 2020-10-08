@@ -1,10 +1,22 @@
 # Workflow
 
-1. Look at [`libDeps.txt`](./libDeps.txt) to see what to work on next
+1. Login to GitHub using the GitHub CLI tool
 
-2. Modify the `./setupRemote.sh` file's `GH_USERNAME` variable to use your GitHub username
+```bash
+gh auth login
+```
 
-3. Install the package and its dependencies and set up its git remotes
+2. (Optional, but recommended) Change the default git protocol from `https` to `ssh`
+
+```bash
+gh config set git_protocol=ssh
+```
+
+3. Look at [`libDeps.txt`](./libDeps.txt) to see what to work on next. See also the [purescript repo's "update ecosystme to v0.14.0" issue](https://github.com/purescript/purescript/issues/3942)
+
+4. Modify the `./setupRemote.sh` file's `GH_USERNAME` variable to use your GitHub username
+
+5. Install the package and its dependencies and set up its git remotes
 
 ```bash
 # Generate the corresponding `<packageName>.dhall` file
@@ -34,7 +46,7 @@ ls .spago/prelude
 ./setupRemote.sh prelude master
 ```
 
-4. Do your updates locally
+6. Do your updates locally
 
 ```bash
 cd .spago/packageName/versionName
@@ -60,7 +72,7 @@ cd .spago/functions/v4.0.0
 ./reinstall prelude functions
 ```
 
-5. Create a PR
+7. Create a PR
 
 ```bash
 git push -u origin updateTo14
