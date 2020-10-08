@@ -2,7 +2,9 @@
 
 1. Look at [`libDeps.txt`](./libDeps.txt) to see what to work on next
 
-2. Install the package and its dependencies and set up its git remotes
+2. Modify the `./setupRemote.sh` file's `GH_USERNAME` variable to use your GitHub username
+
+3. Install the package and its dependencies and set up its git remotes
 
 ```bash
 # Generate the corresponding `<packageName>.dhall` file
@@ -32,7 +34,7 @@ ls .spago/prelude
 ./setupRemote.sh prelude master
 ```
 
-3. Do your updates locally
+4. Do your updates locally
 
 ```bash
 cd .spago/packageName/versionName
@@ -58,7 +60,7 @@ cd .spago/functions/v4.0.0
 ./reinstall prelude functions
 ```
 
-4. Create a PR
+5. Create a PR
 
 ```bash
 git push -u origin updateTo14
