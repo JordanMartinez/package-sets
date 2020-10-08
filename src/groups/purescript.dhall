@@ -296,7 +296,7 @@
   , version = "v2.1.1"
   }
 , maybe =
-  { dependencies = [ "control", "invariant", "newtype", "prelude" ]
+  { dependencies = [ "control", "invariant", "safe-coerce", "newtype", "prelude" ]
   , repo = "https://github.com/purescript/purescript-maybe.git"
   , version = "v4.0.1"
   }
